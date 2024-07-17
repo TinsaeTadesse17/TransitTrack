@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:transittrack/core/routes/router_config.dart';
+import 'package:transittrack/features/authentication/presentation/pages/login_page.dart';
 import 'package:transittrack/features/home/presentation/pages/home_page.dart';
 import 'package:transittrack/features/onboarding/presentation/pages/onboarding_page.dart';
 
@@ -21,15 +23,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
-        // fontFamily: 'Laila',
+        fontFamily: 'Laila',
       ),
-      home: onboarding ? HomePage() : OnboardingPage(),
+      routerConfig: AppRouter.router,
     );
   }
 }
