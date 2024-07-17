@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realtime Bus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #search-box {
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            z-index: 15;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-left">
+        <div class="navbar-header" style="display: flex; align-items: center;">
+            <img src="images/logo.png" alt="Logo" style="height: 50px; margin-right: 10px;">        
+            <h4 class="box-title" style="color: #878787;">Transit Track</h4>
+        </div>
+    </div>
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                                 <li class="active" >
+                        <a href="index.html"><i class="menu-icon fa fa-laptop" ></i>Dashboard </a>
+                    </li>
+                <li class="menu-title">MENUS</li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="routing.html" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" > <i class="menu-icon fa fa-map-marker"></i>Routing</a>
+                        <ul class="sub-menu children dropdown-menu">                    
+                            <li><i class="fa fa-th"></i><a href="routing.html">Status</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="realtime.html" > <i class="menu-icon fa fa-clock-o"></i>Reatime</a>
+                       
+                    </li>
+                    <li class="menu-item">
+                        <a href="buses.html" > <i class="menu-icon fa fa-bus"></i>Buses</a>
+                       
+                    </li>
+                   
+
+                    <li class="menu-title">*</li>
+
+                   <li class="menu-item">
+                        <a href="#" > <i class="menu-icon fa fa-gear"></i>Setting</a>
+                       
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" > <i class="menu-icon fa fa-phone"></i>Help</a>
+                       
+                    </li>
+            </div>
+        </nav>
+    </aside>
+    <input id="search-box" type="text" placeholder="Search location">
+    <img src="images/1.png">
+    <div id="map"></div>
+</body>
+</html>
