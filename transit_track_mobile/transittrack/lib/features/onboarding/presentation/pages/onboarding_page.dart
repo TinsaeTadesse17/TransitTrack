@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:transittrack/features/authentication/presentation/pages/login_page.dart';
 import 'package:transittrack/features/home/presentation/pages/home_page.dart';
 import 'package:transittrack/features/onboarding/domain/onboarding_entity.dart';
 
 class OnboardingPage extends StatefulWidget {
-  OnboardingPage({super.key});
+  const OnboardingPage({super.key});
 
   @override
   State<OnboardingPage> createState() => _OnboardingPageState();
@@ -21,7 +21,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
             "Stay connected to your ride always know where your bus is and when it'll be there."),
     OnboardingEntity(
         title: "Arrival time estimation",
-        image: 'assets/images/onboarding.png',
+        image: 'assets/images/onboarding2.png',
         description:
             "Our advanced algorithms provide you with highly accurate arrival time predictions."),
     OnboardingEntity(
@@ -41,7 +41,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
           color: Colors.white,
           height: 180,
           child: Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -50,7 +50,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   controller: pageController,
                   count: onboardingItems.length,
                   onDotClicked: (index) => pageController.animateToPage(index,
-                      duration: Duration(microseconds: 600),
+                      duration: const Duration(microseconds: 600),
                       curve: Curves.easeIn),
                   effect: WormEffect(
                       activeDotColor: Theme.of(context).primaryColor,
@@ -63,35 +63,35 @@ class _OnboardingPageState extends State<OnboardingPage> {
         ),
         body: Padding(
           // padding: EdgeInsets.fromLTRB(2.w, 7.h, 2.w, 0.h),
-          padding: EdgeInsets.all(12),
+          padding: const EdgeInsets.all(12),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 12),
+              margin: const EdgeInsets.symmetric(horizontal: 12),
               child: PageView.builder(
                 itemCount: onboardingItems.length,
                 controller: pageController,
                 itemBuilder: (context, index) {
                   return Column(children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 130,
                     ),
                     Image.asset(onboardingItems[index].image),
-                    SizedBox(
+                    const SizedBox(
                       height: 26,
                     ),
                     Text(
                       onboardingItems[index].title,
-                      style: TextStyle(fontFamily: 'Laila', fontSize: 32),
+                      style: const TextStyle(fontFamily: 'Laila', fontSize: 32),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 12,
                     ),
                     Center(
                       child: Text(
                         onboardingItems[index].description,
-                        style: TextStyle(fontFamily: 'Laila', fontSize: 18),
+                        style: const TextStyle(fontFamily: 'Laila', fontSize: 18),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -111,7 +111,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
         
         if (!mounted) return;
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => HomePage()));
+            context, MaterialPageRoute(builder: (context) => LoginPage()));
       },
       child: Container(
         width: 150,
